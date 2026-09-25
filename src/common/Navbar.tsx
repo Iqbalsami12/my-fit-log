@@ -7,7 +7,7 @@ import React from 'react';
 const Navbar = () => {
 
     const links = <>
-        <li><Link href='/workouts' className='text-[#C2F800] bg-[#C2F800'>Workouts</Link></li>
+        <li><Link href='/workouts' >Workouts</Link></li>
 
         <li><Link href='/myPlan'>My Plan</Link></li>
     </>
@@ -39,7 +39,8 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+                <a className="btn">Plan</a>
+                <a className="btn">Saved</a>
             </div>
         </div>
     );

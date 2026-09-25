@@ -1,11 +1,14 @@
+import Banner from '@/components/homepage/Banner';
+import Exercises from '@/components/homepage/Exercises';
 import React from 'react';
 
-const BooksPage = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+const HomePage = () => {
+  return (
+    <div>
+      <Banner></Banner>
+      <Exercises></Exercises>
+    </div>
+  );
 };
 
-export default BooksPage;
+export default HomePage;
