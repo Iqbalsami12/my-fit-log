@@ -8,7 +8,7 @@ import ListCards from './ListCards';
 const PlannedPage = () => {
 
     const[sortBy, setSortBy] = useState<`Duration`| `Calories` | `Rating`>(`Duration`);
-    const [tabActive, setTabActive] =useState<'plan' | 'saved'>('plan')
+    const [tabActive] =useState<'plan' | 'saved'>('plan')
 
     const { plannedWorkouts, setPlannedWorkouts, savedWorkouts, setSavedWorkouts } = useContext(WorkoutContext) as {
         plannedWorkouts: IWorkout[];
@@ -122,7 +122,7 @@ const PlannedPage = () => {
 
                 <select value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as `Duration` | `Calories` | `Rating`)}
-                defaultValue="Pick a color" className="select">
+                className="select">
                     <option value="" disabled>Sort By</option>
                     <option>Duration</option>
                     <option>Calories</option>

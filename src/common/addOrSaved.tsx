@@ -15,7 +15,12 @@ const AddOrSaved = ({workout}: {workout:IWorkout}) => {
         savedWorkouts,
          setSavedWorkouts
 
-    } = useContext(WorkoutContext)
+    } = useContext(WorkoutContext) as {
+        plannedWorkouts: IWorkout[];
+        setPlannedWorkouts: React.Dispatch<React.SetStateAction<IWorkout[]>>;
+        savedWorkouts: IWorkout[];
+        setSavedWorkouts: React.Dispatch<React.SetStateAction<IWorkout[]>>;
+    }
 
     const [addedOrSaved, setAddedOrSaved] = useState("Add to today's plan")
 

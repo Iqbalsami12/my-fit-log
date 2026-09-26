@@ -1,12 +1,19 @@
+'use client'
 import Image from 'next/image';
-import React from 'react';
+import React, { useContext } from 'react';
 import NavButtons from './NavButtons';
+import { WorkoutContext } from '@/context/WorkoutContext';
+import { IWorkout } from '@/workoutTypes';
+import Link from 'next/link';
 
 
 
 const Navbar = () => {
 
-   
+   const {plannedWorkouts, savedWorkouts} = useContext(WorkoutContext) as {
+    plannedWorkouts: IWorkout[]
+    savedWorkouts: IWorkout[]
+   }
 
     const links = <>
         <NavButtons></NavButtons>
@@ -39,8 +46,9 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Plan () </a>
-                <a className="btn">Saved</a>
+                <Link href='/myPlan'><button className="btn">Plan({plannedWorkouts.length})</button></Link>
+
+                <Link href='/myPlan'><button className="btn"></button> Saved({savedWorkouts.length})</Link>
             </div>
         </div>
     );
