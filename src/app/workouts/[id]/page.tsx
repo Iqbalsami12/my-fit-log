@@ -96,7 +96,7 @@ const WorkoutDetailsPage = async({params}: IWorkoutDetailsProps) => {
                 )
                 )}
             </ol>
-                <AddOrSaved></AddOrSaved>
+                <AddOrSaved workout={workout}></AddOrSaved>
            
             </div>
         </div>

@@ -1,0 +1,34 @@
+'use client'
+import Link from 'next/link';
+import React, { useState } from 'react';
+
+const NavButtons = () => {
+     const [navButtons, setNavbuttons] = useState("Workouts")
+
+    const handleNavButtons= (type: "Workouts" | "My Plan") => {
+        setNavbuttons(type)
+    }
+    return (
+        <div>
+            <li><Link href='/workouts' >
+        
+        
+        <button onClick={() => handleNavButtons("Workouts")}
+                type="submit" className={`${navButtons=== "Workouts" ? 'btn bg-[#f2f3ef] text-[#C2F800]' : ""} btn rounded-2xl`}> Workouts</button>
+            
+        
+        </Link>
+        </li>
+
+        <li>
+            <Link href='/myPlan'>
+            <button onClick={() => handleNavButtons("My Plan")}
+                type="submit" className={`${navButtons=== "My Plan" ? 'btn bg-[#f2f3ef] text-[#C2F800]' : ""} border-0 btn rounded-2xl`}> My Plan</button>
+            
+            </Link>
+            </li>
+        </div>
+    );
+};
+
+export default NavButtons;

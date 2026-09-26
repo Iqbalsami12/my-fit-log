@@ -1,15 +1,15 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
+import NavButtons from './NavButtons';
 
 
 
 const Navbar = () => {
 
-    const links = <>
-        <li><Link href='/workouts' >Workouts</Link></li>
+   
 
-        <li><Link href='/myPlan'>My Plan</Link></li>
+    const links = <>
+        <NavButtons></NavButtons>
     </>
     return (
         <div className="navbar bg-base-100 shadow-sm container mx-auto">
@@ -39,7 +39,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Plan</a>
+                <a className="btn">Plan </a>
                 <a className="btn">Saved</a>
             </div>
         </div>

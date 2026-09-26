@@ -10,10 +10,10 @@ const Footer = () => {
                 <Image
                 src='/assets/logo.png'
                 alt='logo'
-                width={30}
-                height={30}
+                width={20}
+                height={20}
                 />
-                <h2 className='font-bold text-2xl'>FITLOG</h2>
+                <h2 className='font-bold text-[16px]'>FITLOG</h2>
             </div>
                 <div>
                     <p className='text-gray-400'> <FontAwesomeIcon icon={faCopyright}/> Fitlog - Workout Library. Train, log honest. </p>
