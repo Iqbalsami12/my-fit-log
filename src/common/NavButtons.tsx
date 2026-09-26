@@ -9,7 +9,7 @@ const NavButtons = () => {
         setNavbuttons(type)
     }
     return (
-        <div>
+        <div className='md:flex gap-2.5 lg:flex'>
             <li><Link href='/workouts' >
         
         

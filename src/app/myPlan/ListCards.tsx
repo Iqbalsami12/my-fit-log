@@ -1,3 +1,5 @@
+import DoneButton from '@/common/DoneButton';
+import RemoveButtons from '@/components/RemoveButtons';
 import { IWorkout } from '@/workoutTypes';
 import { faBurn, faClock, faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,22 +9,25 @@ import React from 'react';
 
 interface ListCardProps{
     exercise: IWorkout
+    showDoneButton?: boolean
+    onRemove: ()=> void
 }
 
-const ListCards = ({exercise}:ListCardProps) => {
+const ListCards = ({exercise, showDoneButton,onRemove}:ListCardProps) => {
     return (
         <div className='container mx-auto flex justify-between'>
           <div className='flex gap-2.5'>
-              <Image
+              <Image className='rounded-2xl'
             src={exercise.image}
             alt={exercise.name}
-            width={100}
+            width={150}
             height={70}
             />
-           <div>
+           <div className='grid grid-cols-1 gap-2'>
              <h2 className='font-bold text-2xl'> {exercise.name} </h2>
+             <h2 className="text-gray-400">{exercise.equipment}</h2>
 
-            <ul className='flex flex-col gap-1.5'>
+            <ul className='flex gap-1.5'>
     <li><FontAwesomeIcon icon={faClock} /> Duration</li>
     <li><FontAwesomeIcon icon={faBurn} />{exercise.caloriesBurned} kcal</li>
     <li><FontAwesomeIcon icon={faStar} />{exercise.rating}</li>
@@ -30,8 +35,16 @@ const ListCards = ({exercise}:ListCardProps) => {
            </div>
 
           </div>
-          <div>
-            <Link href={`http://localhost:3000/workouts/3`} className='rounded-3xl bg-[#CCFF00] p-2.5 font-bold text-black'>View Details</Link>
+          <div className='flex gap-2.5 justify-center items-center'>
+            <button>
+                <Link href={`http://localhost:3000/workouts/${exercise.id}`} className='rounded-3xl  p-2.5 bg-[#374151]'>View Details</Link>
+            </button>
+
+            {showDoneButton && <DoneButton/>}
+            <RemoveButtons onRemove={onRemove}/>
+
+
+
             
           </div>
         </div>
