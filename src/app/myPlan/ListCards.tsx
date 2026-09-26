@@ -28,7 +28,7 @@ const ListCards = ({exercise, showDoneButton,onRemove}:ListCardProps) => {
              <h2 className="text-gray-400">{exercise.equipment}</h2>
 
             <ul className='flex gap-1.5'>
-    <li><FontAwesomeIcon icon={faClock} /> Duration</li>
+    <li><FontAwesomeIcon icon={faClock} /> {exercise.duration}</li>
     <li><FontAwesomeIcon icon={faBurn} />{exercise.caloriesBurned} kcal</li>
     <li><FontAwesomeIcon icon={faStar} />{exercise.rating}</li>
    </ul>
