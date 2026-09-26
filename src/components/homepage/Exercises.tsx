@@ -4,9 +4,13 @@ import { IWorkout } from '@/workoutTypes';
 
 
 const getExercises = async()=>{
-    const response = await fetch('https://api.abcz.workers.dev/api/fitlog')
+    const response = await fetch('https://api.abcz.workers.dev/api/fitlog');
 
-    return response.json()
+     if (!response.ok) {
+        throw new Error(`API error: ${response.status}`);
+    }
+    const data = await response.json()
+    return data;
 }
 
 const Exercises = async() => {
