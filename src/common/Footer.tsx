@@ -5,7 +5,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div className='flex justify-between  mt-12 container mx-auto  '>
+        <div className='flex mt-12 container mx-auto sm:gap-2 lg:flex justify-between '>
             <div className='flex gap-1.5'>
                 <Image
                 src='/assets/logo.png'

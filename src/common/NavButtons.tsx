@@ -14,7 +14,7 @@ const NavButtons = () => {
         
         
         <button onClick={() => handleNavButtons("Workouts")}
-                type="submit" className={`${navButtons=== "Workouts" ? 'btn bg-[#1A2312] text-[#C2F800]' : ""} btn rounded-2xl`}> Workouts</button>
+                type="submit" className={`${navButtons=== "Workouts" ? 'btn bg-[#1A2312] text-[#C2F800]' : ""}  rounded-2xl btn`}> Workouts</button>
             
         
         </Link>
@@ -23,7 +23,7 @@ const NavButtons = () => {
         <li>
             <Link href='/myPlan'>
             <button onClick={() => handleNavButtons("My Plan")}
-                type="submit" className={`${navButtons=== "My Plan" ? 'btn bg-[#1A2312] text-[#C2F800]' : ""} border-0 btn rounded-2xl`}> My Plan</button>
+                type="submit" className={`${navButtons=== "My Plan" ? 'btn bg-[#1A2312] text-[#C2F800]' : ""} border-0  rounded-2xl btn`}> My Plan</button>
             
             </Link>
             </li>

@@ -3,7 +3,7 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div className='container mx-auto flex gap-24 mt-12 bg-[#15171D] p-5'>
+        <div className='container mx-auto flex justify-between mt-6 px-4 lg:mt-12 lg:px-8 sm:mt-8 sm:px-6  bg-[#15171D] p-5'>
             <div className='flex flex-col gap-2.5'>
                 <p className='text-[#C2F800]'>WORKOUT LIBRARY</p>
                 <h1 className='font-bold text-white text-6xl'>TRAIN WITH INTENT. <br /> LOG EVERY SET.</h1>
@@ -11,8 +11,8 @@ const Banner = () => {
                     into today&apos;s plan, and watch the week&apos;s work add up.</p>
                     <button className='bg-[#C2F800] p-1 rounded-xl max-w-75 cursor-pointer'>BROWSE WORKOUTS</button>
             </div>
-            <div>
-                <Image
+            <div className='w-full lg:w-1/2'>
+                <Image className='h-auto w-full max-w-100 mx-auto object-contain'
                 src='/assets/banner.png'
                 alt='bannerlogo'
                 width={400}

@@ -8,13 +8,15 @@ import ListCards from './ListCards';
 const PlannedPage = () => {
 
     const[sortBy, setSortBy] = useState<`Duration`| `Calories` | `Rating`>(`Duration`);
-    const [tabActive] =useState<'plan' | 'saved'>('plan')
+    
 
-    const { plannedWorkouts, setPlannedWorkouts, savedWorkouts, setSavedWorkouts } = useContext(WorkoutContext) as {
+    const { plannedWorkouts, setPlannedWorkouts, savedWorkouts, setSavedWorkouts, tabActive, setTabActive } = useContext(WorkoutContext) as {
         plannedWorkouts: IWorkout[];
         setPlannedWorkouts: React.Dispatch<React.SetStateAction<IWorkout[]>>;
         savedWorkouts: IWorkout[];
-        setSavedWorkouts: React.Dispatch<React.SetStateAction<IWorkout[]>>;
+        setSavedWorkouts: React.Dispatch<React.SetStateAction<IWorkout[]>>
+         tabActive: 'plan' | 'saved';
+            setTabActive: React.Dispatch<React.SetStateAction<'plan' | 'saved'>>;
     }
 
     const handleRemovePlan = (id: number) => {
@@ -60,7 +62,7 @@ const PlannedPage = () => {
             <h2 className='font-bold text-3xl'>MY PLAN</h2>
             <p className='text-gray-400'>Cap of five lifts for today. Finish them, then load more</p>
 
-            <table className='bg-[#232834] rounded-2xl w-full'>
+            <table className='bg-[#232834] rounded-2xl container mx-auto'>
                 <tbody>
                     <tr>
                         <td className='p-8' >Exercises</td>
@@ -78,7 +80,7 @@ const PlannedPage = () => {
             <div className='container mx-auto flex justify-between mt-12'>
 
                 <div className="tabs tabs-border">
-                    <input type="radio" name="my_tabs_2" className="tab" aria-label="Today's Plan" />
+                    <input type="radio" name="my_tabs_2" className="tab" aria-label="Today's Plan" checked={tabActive==='plan'} onChange={()=> setTabActive('plan')} />
                     <div className="tab-content border-base-300 bg-base-100 p-10">
                         {
                             plannedWorkouts.length > 0 ?
@@ -100,7 +102,7 @@ const PlannedPage = () => {
 
                     {/* Saved tab */}
 
-                    <input type="radio" name="my_tabs_2" className="tab" aria-label="Saved" defaultChecked />
+                    <input type="radio" name="my_tabs_2" className="tab" aria-label="Saved" checked={tabActive==='saved'} onChange={()=> setTabActive('saved')} />
                     <div className="tab-content border-base-300 bg-base-100 p-10"> {
                         savedWorkouts.length > 0 ?
                             (sortSavedWorkouts.map((workout: IWorkout) =>

@@ -9,12 +9,16 @@ const WorkoutProvider = ({children}:{children:ReactNode}) => {
     const [plannedWorkouts, setPlannedWorkouts] = useState([])
 
     const [savedWorkouts, setSavedWorkouts] = useState([])
+    const [tabActive, setTabActive] = useState<'plan' | 'saved'>('plan')
+    
 
     const sharedData = {
         plannedWorkouts,
         setPlannedWorkouts,
         savedWorkouts,
-        setSavedWorkouts
+        setSavedWorkouts,
+        tabActive,
+        setTabActive,
     }
 
     
